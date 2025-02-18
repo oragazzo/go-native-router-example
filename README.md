@@ -57,14 +57,37 @@ The following endpoints are available:
 - `PUT /users/{id}` - Update an existing user
 - `DELETE /users/{id}` - Delete a user
 
+## Usage Examples
+
+Here are some example curl commands to interact with the API:
+
+```bash
+# List all users
+curl http://localhost:8080/users
+
+# Get a specific user
+curl http://localhost:8080/users/{generated_uuid}
+
+# Create a new user
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"name": "John Doe"}' \
+  http://localhost:8080/users
+
+# Update a user
+curl -X PUT \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Teste"}' \
+  http://localhost:8080/users/{generated_uuid}
+
+# Delete a user
+curl -X DELETE http://localhost:8080/users/{generated_uuid}
+```
+
 ## Why ServeMux?
 
 `ServeMux` is Go's standard HTTP request multiplexer. While there are more feature-rich third-party routers available, `ServeMux` is:
+
 - Simple and lightweight
 - Part of the standard library
 - Perfect for basic routing needs
-- Great for learning HTTP server fundamentals in Go
-
-## Contributing
-
-Feel free to submit issues and enhancement requests! 
