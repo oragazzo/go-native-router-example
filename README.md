@@ -90,4 +90,4 @@ curl -X DELETE http://localhost:8080/users/{generated_uuid}
 
 - Simple and lightweight
 - Part of the standard library
-- Perfect for basic routing needs
+- I may be using this for bigger projects in a near future, due to the updates presented in the Go 1.22 version
