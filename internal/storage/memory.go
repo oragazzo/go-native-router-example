@@ -43,3 +43,13 @@ func (s *MemoryStorage) UpdateUser(id string, updatedUser models.User) (models.U
 	}
 	return models.User{}, errors.New("user not found")
 }
+
+func (s *MemoryStorage) DeleteUser(id string) error {
+	for i := range s.users {
+		if s.users[i].ID == id {
+			s.users = append(s.users[:i], s.users[i+1:]...)
+			return nil
+		}
+	}
+	return errors.New("user not found")
+}

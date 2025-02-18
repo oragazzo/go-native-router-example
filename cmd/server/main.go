@@ -23,6 +23,7 @@ func main() {
 	serverMux.HandleFunc("POST /users", userHandler.CreateUser)
 	serverMux.HandleFunc("GET /users/{id}", userHandler.GetUser)
 	serverMux.HandleFunc("PUT /users/{id}", userHandler.UpdateUser)
+	serverMux.HandleFunc("DELETE /users/{id}", userHandler.DeleteUser)
 
 	// Start server
 	log.Println("Server starting on :8080")
